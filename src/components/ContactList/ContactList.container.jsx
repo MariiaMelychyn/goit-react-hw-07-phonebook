@@ -1,6 +1,8 @@
-import { connect } from 'react-redux'; // Импортируем коннект для глобального хранилища
-import { contactsOperations, contactsSelectors } from '../../redux/contacts/contacts-actions'; // Импортируем экшны для диспатчинга
-import ContactList from './ContactList';
+import { connect } from 'react-redux'; // Импортирует коннект для глобального хранилища
+
+import { contactsOperations, contactsSelectors } from '../../redux/contacts'; // Импорт async операции удаления контакта и селектора всех контактов
+
+import ContactList from './ContactList'; // Импорт компонента списка контактов для обёртки в коннекте
 
 // Из стейта в пропы компонента ContactList - после фильтрации в селекторах
 const mapStateToProps = state => ({

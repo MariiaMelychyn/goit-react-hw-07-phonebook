@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
-import contactsActions from '../../redux/contacts/contacts-actions';
+
+import { contactsSelectors, contactsActions } from '../../redux/contacts';
+
 import Filter from './Filter';
 
 const mapStateToProps = state => ({
-  value: state.contacts.filter,
+  value: contactsSelectors.getFilter(state),
 });
 
 const mapDispatchToProps = distatch => ({

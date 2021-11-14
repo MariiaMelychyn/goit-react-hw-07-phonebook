@@ -1,18 +1,21 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+
 import AddContactButton from '../AddContactButton';
+
 import styles from './ContactForm.module.scss';
 
 const initialState = {
   name: '',
   number: '',
 };
-const ContactForm = ({contacts, onSubmit}) => {
+
+const ContactForm = ({ contacts, onSubmit }) => {
   const [state, setState] = useState(initialState);
   const { name, number } = state;
- 
-  // Следит за инпутом и пишет в локальный стейт его значение
+
+  // Следит за инпутом
   const hanldeChange = event => {
     const { name, value } = event.currentTarget;
 
@@ -28,7 +31,6 @@ const ContactForm = ({contacts, onSubmit}) => {
 
     const normalizedName = name.toLowerCase();
 
-
     // Проверка на дубликат по имени
     const nameInContacts = contacts.find(
       contact => contact.name === normalizedName,
@@ -39,24 +41,21 @@ const ContactForm = ({contacts, onSubmit}) => {
       contact => contact.number === number,
     );
 
-    // Отправка данных после проверки в экшн
+    // Отправка имени и номера после проверки (в проп-метод из контейнера)
     if (!nameInContacts && !numberInContacts) {
       onSubmit(normalizedName, number);
       resetForm();
       return;
     }
 
-    toast.info(`${name} is already in contacts`, {
-      autoClose: 2500,
-    });
+    toast.info(`${name} is already in contacts`);
   };
 
   // Сброс полей формы (после отправки)
   const resetForm = () => {
-   setState(initialState);
+    setState(initialState);
   };
 
-  
   return (
     <form className={styles.form} onSubmit={hanldeSubmit}>
       <label className={styles.label}>

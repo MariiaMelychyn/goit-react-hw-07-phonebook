@@ -47,3 +47,39 @@ const App = () => {
 };
 
 export default App;
+
+// Вариант с пропсами через ToProps и без класса
+// const App = ({ isLoadingContacts, isError, fetchContactsOnMOunt }) => {
+//   useEffect(() => {
+//     fetchContactsOnMOunt();
+//   }, [fetchContactsOnMOunt]);
+
+//   return (
+//     <Container>
+//       <Logo />
+
+//       <ContactForm />
+
+//       <Filter />
+
+//       <ContactList />
+
+//       {isLoadingContacts && <Loader />}
+
+//       {isError && <Alert severity="error">{isError.message}</Alert>}
+
+//       <ToastContainer autoClose={2500} />
+//     </Container>
+//   );
+// };
+
+// const mapStateToProps = state => ({
+//   isLoadingContacts: contactsSelectors.getLoading(state),
+//   isError: contactsSelectors.getError(state),
+// });
+
+// const mapDispatchToProps = dispatch => ({
+//   fetchContactsOnMount: () => dispatch(contactsOperations.fetchContacts()),
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);

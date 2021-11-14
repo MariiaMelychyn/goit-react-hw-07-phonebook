@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+
 import ContactItem from '../ContactItem';
+
 import styles from './ContactList.module.scss';
 
 // Принимает все контакты и пробрасывает дальше метод для удаления контакта
@@ -20,7 +22,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     }),
