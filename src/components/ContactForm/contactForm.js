@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import shortid from 'shortid';
-import s from './form.module.css';
+import s from './contactForm.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import contactsActions from '../../redux/actions';
-import { getContacts } from '../../redux/selectors';
+import contactsOperations from 'redux/operations';
+import { getContacts } from 'redux/selectors';
+import { useForm } from 'react-hook-form';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -14,6 +15,8 @@ export default function ContactForm() {
 
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+
+  const { register, handleSubmit } = useForm();
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -29,25 +32,25 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (name === '') {
+  const handleFormSubmit = data => {
+    // e.preventDefault();
+    console.log(data.name);
+    if (data.name === '') {
       alert(`Введите, пожалуйста, имя контакта.`);
       return;
     }
 
-    if (number === '') {
+    if (data.number === '') {
       alert(`Введите, пожалуйста, номер телефона контакта.`);
       return;
     }
 
-    if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is already in contacts.`);
+    if (contacts.find(contact => contact.name === data.name)) {
+      alert(`${data.name} is already in contacts.`);
       reset();
       return;
     }
-
-    dispatch(contactsActions.addContact(name, number));
+    dispatch(contactsOperations.addContact(data.name, data.number));
     reset();
   };
 
@@ -57,7 +60,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form className={s.form} onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit(handleFormSubmit)}>
       <label className={s.label} htmlFor={contactNameId}>
         Name
         <input
@@ -67,6 +70,7 @@ export default function ContactForm() {
           value={name}
           onChange={handleChange}
           id={contactNameId}
+          ref={register}
         />
       </label>
       <label className={s.label} htmlFor={contactNumberId}>
@@ -78,6 +82,7 @@ export default function ContactForm() {
           value={number}
           onChange={handleChange}
           id={contactNumberId}
+          ref={register}
         />
       </label>
 

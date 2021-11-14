@@ -1,11 +1,15 @@
 .form {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 200px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid rgb(192, 128, 55);
+  border-left: none;
+  border-right: none;
 }
 
 .label {
@@ -18,6 +22,9 @@
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 10%;
+  border-color: rgb(192, 128, 55);
 }
 
 .button {
@@ -25,9 +32,10 @@
   height: 30px;
   border: none;
   border-radius: 10px;
+  background-color: rgb(223, 178, 119);
 }
 
 .button:hover,
 .button:focus {
-  background-color: #4caf50;
+  background-color: #27812a;
 }

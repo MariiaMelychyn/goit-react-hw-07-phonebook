@@ -17,6 +17,7 @@
   height: 20px;
   border: none;
   border-radius: 10px;
+  background-color: rgb(223, 178, 119);
 }
 
 .button:hover,
