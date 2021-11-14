@@ -1,6 +1,5 @@
 import IconButton from '../IconButton';
 import { ReactComponent as DeleteIcon } from '../../assets/images/delete.svg';
-
 import styles from './ContactItem.module.scss';
 
 // Принимает один контакт и метод для удаления контакта

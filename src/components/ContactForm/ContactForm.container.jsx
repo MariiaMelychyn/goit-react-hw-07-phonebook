@@ -1,17 +1,17 @@
 import { connect } from 'react-redux'; // Импорт функции коннекта к хранилищу
-import contactsActions from '../../redux/contacts/contacts-actions'; // Импорт экшенов из контактов
+import { contactsOperations, contactsSelectors }  from '../../redux/contacts/contacts-actions'; // Импорт операции добавления контакта и селектора всех контактов
 
 import ContactForm from './ContactForm';
 
 // Из глобального стейта в пропы компонента
 const mapStateToProps = state => ({
-  contacts: state.contacts.items,
+  contacts: contactsSelectors.getContacts(state),
 });
 
-// Из глобального стейта в пропы компонента - методы
+// Из глобального стейта в пропы компонента -ContactForm - методы
 const mapDispatchToProps = dispatch => ({
   onSubmit: (name, number) =>
-    dispatch(contactsActions.addContact(name, number)),
+    dispatch(contactsOperations.addContact(name, number)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
