@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/css/main.9e7c7279.chunk.css",
+    "main.js": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/main.5c6493e2.chunk.js",
+    "main.js.map": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/main.5c6493e2.chunk.js.map",
+    "runtime-main.js": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/runtime-main.b745fa36.js",
+    "runtime-main.js.map": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/runtime-main.b745fa36.js.map",
+    "static/js/2.60f68666.chunk.js": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/2.60f68666.chunk.js",
+    "static/js/2.60f68666.chunk.js.map": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/2.60f68666.chunk.js.map",
+    "index.html": "/MariiaMelychyn/goit-react-hw-07-phonebook/index.html",
+    "static/css/main.9e7c7279.chunk.css.map": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/css/main.9e7c7279.chunk.css.map",
+    "static/js/2.60f68666.chunk.js.LICENSE.txt": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/js/2.60f68666.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/MariiaMelychyn/goit-react-hw-07-phonebook/static/media/phone.940a159b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b745fa36.js",
+    "static/js/2.60f68666.chunk.js",
+    "static/css/main.9e7c7279.chunk.css",
+    "static/js/main.5c6493e2.chunk.js"
+  ]
+}
