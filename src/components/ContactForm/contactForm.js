@@ -10,6 +10,7 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+  
   const contactNameId = shortid.generate();
   const contactNumberId = shortid.generate();
 
