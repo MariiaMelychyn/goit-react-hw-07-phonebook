@@ -17,7 +17,7 @@
 }
 .value:focus {
   padding-left: 10px;
-  border: 3px solid #558cdd;
+  border: 3px solid #55dd77;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
   outline: none;
 }

@@ -6,7 +6,7 @@
   width: 400px;
   height: 250px;
   padding: 20px;
-  border: 5px solid #558cdd;
+  border: 5px solid #55dd92;
   border-radius: 20px;
   margin: 40px auto;
 }
@@ -28,7 +28,7 @@
   border-radius: 20px;
 }
 .input:focus{
-  border: 3px solid #558cdd;
+  border: 3px solid #176932;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
   outline: none;
 }
@@ -42,7 +42,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   display: inline-block;
-  box-shadow: 0 0 20px #299;
+  box-shadow: 0 0 20px rgb(29, 37, 37);
   text-shadow: 0 0 5px #000;
   transition: all .7s;
   border: 1px solid #777f8b;
@@ -55,5 +55,5 @@
 }
 .btnText {
   font-size: 20px;
-  color: rgb(43, 49, 88);
+  color: rgb(16, 153, 11);
 }
