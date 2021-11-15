@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
 import { addContact } from '../../redux/contacts/contacts-operations';
 import s from './Form.module.css';
+
 // import PropTypes from 'prop-types';
 
 export default function Form() {
