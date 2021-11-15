@@ -1,4 +1,5 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'; // Импорт функции создания хранилища и прослойки
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
 import {
   FLUSH,
   REHYDRATE,
@@ -6,12 +7,11 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'; // Импорт функции персистеров и фикса консоли
-import logger from 'redux-logger'; // Импорт функции логгирования
+} from 'redux-persist';
+import { filterReducer } from './contacts/contacts-filter';
+import contactsSlice from './contacts/contacts-reducer';
 
-import { contactsReducer } from './contacts'; // Импорт редюсера по контактам
 
-// Создание прослоек + логгер. Важен порядок!
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -21,13 +21,13 @@ const middleware = [
   logger,
 ];
 
-// Создание хранилища (корневой редюсер + прослойки + тулзы только для разработки)
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    contacts: contactsReducer,
+    phoneBook: contactsSlice,
+    filter: filterReducer,
   },
-  middleware,
   devTools: process.env.NODE_ENV === 'development',
+  middleware,
 });
 
 export default store;

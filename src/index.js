@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import { Provider } from 'react-redux'; // Импорт провайдера для хранилища
-import store from './redux/store'; // Импорт обьекта из стора (хранилище)
-
-import App from './App.jsx';
-
-import 'modern-normalize/modern-normalize.css';
-import './App.module.scss';
-
+// import { PersistGate } from 'redux-persist/integration/react';
+// import store from './redux/store';
+// import { store, persistor } from './redux/store';
+import store from './redux/store';
+import { Provider } from 'react-redux';
+import './index.css';
+import App from './components/App';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <App /> 
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
