@@ -1,12 +1,4 @@
-import { createAction } from '@reduxjs/toolkit';
-
-export const addContact = createAction('contact/add');
-export const deleteContact = createAction('contact/delete');
-export const changeFilter = createAction('contact/changeFilter');
-
-
-
-// // Создание экшенов для получаения списка контактов
+// Создание экшенов для получаения списка контактов
 // export const fetchContactsRequest = createAction(
 //     'contacts/fetchContactsRequest',
 //   );
@@ -44,3 +36,12 @@ export const changeFilter = createAction('contact/changeFilter');
   
 //     changeFilter,
 //   };
+
+import { createAction } from '@reduxjs/toolkit';
+
+export const addContact = createAction('contact/add');
+export const deleteContact = createAction('contact/delete');
+export const changeFilter = createAction('contact/changeFilter');
+
+
+
