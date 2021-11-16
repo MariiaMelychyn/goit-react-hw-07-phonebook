@@ -1,7 +1,5 @@
 
 import { createSlice } from '@reduxjs/toolkit';
-
-
 import {
   fetchContacts,
   addContact,
@@ -17,28 +15,34 @@ const contactsSlice = createSlice({
       ...state,
       contactItems: action.payload,
       loading: false,
+      error: null,
     }),
     [fetchContacts.pending]: state => ({
       ...state,
       loading: true,
+      error: null,
     }),
-    [fetchContacts.rejected]: state => ({
+    [fetchContacts.rejected]: (state, action) => ({
       ...state,
       loading: false,
+      error: action.payload,
     }),
 
     [addContact.fulfilled]: (state, action) => ({
       ...state,
       contactItems: [...state.contactItems, action.payload],
       loading: false,
+      error: null,
     }),
     [addContact.pending]: state => ({
       ...state,
       loading: true,
+      error: null,
     }),
-    [addContact.rejected]: state => ({
+    [addContact.rejected]: (state, action) => ({
       ...state,
       loading: false,
+      error: action.payload,
     }),
 
     [deleteContact.fulfilled]: (state, action) => ({
@@ -47,18 +51,19 @@ const contactsSlice = createSlice({
         ({ id }) => id !== action.payload,
       ),
       loading: false,
+      error: null,
     }),
     [deleteContact.pending]: state => ({
       ...state,
       loading: true,
+      error: null,
     }),
-    [deleteContact.rejected]: state => ({
+    [deleteContact.rejected]: (state, action) => ({
       ...state,
       loading: false,
+      error: action.payload,
     }),
   },
 });
 
 export default contactsSlice.reducer;
-
-
