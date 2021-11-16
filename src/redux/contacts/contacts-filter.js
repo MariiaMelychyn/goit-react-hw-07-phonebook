@@ -1,4 +1,4 @@
-import  changeFilter  from '../contacts/contacts-actions';
+import  {changeFilter}  from '../contacts/contacts-actions';
 import { createReducer } from '@reduxjs/toolkit';
 
 export const filterReducer = createReducer('', {
