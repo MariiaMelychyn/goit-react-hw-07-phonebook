@@ -14,54 +14,44 @@ const contactsSlice = createSlice({
     [fetchContacts.fulfilled]: (state, action) => ({
       ...state,
       contactItems: action.payload,
-      loading: false,
-      error: null,
+      loading: false
     }),
     [fetchContacts.pending]: state => ({
       ...state,
-      loading: true,
-      error: null,
+      loading: true
     }),
     [fetchContacts.rejected]: (state, action) => ({
       ...state,
-      loading: false,
-      error: action.payload,
+      loading: false
     }),
 
     [addContact.fulfilled]: (state, action) => ({
       ...state,
       contactItems: [...state.contactItems, action.payload],
-      loading: false,
-      error: null,
+      loading: false
     }),
     [addContact.pending]: state => ({
       ...state,
-      loading: true,
-      error: null,
+      loading: true
     }),
     [addContact.rejected]: (state, action) => ({
       ...state,
-      loading: false,
-      error: action.payload,
+      loading: false
     }),
 
     [deleteContact.fulfilled]: (state, action) => ({
       ...state,
       contactItems: state.contactItems.filter(
-        ({ id }) => id !== action.payload,
-      ),
-      loading: false,
-      error: null,
+        ({ id }) => id !== action.payload,),
+      loading: false
     }),
     [deleteContact.pending]: state => ({
       ...state,
-      loading: true,
-      error: null,
+      loading: true
     }),
     [deleteContact.rejected]: (state, action) => ({
       ...state,
-      loading: false,
-      error: action.payload,
+      loading: false
     }),
   },
 });
